@@ -20,10 +20,13 @@ from face_app import views
 
 urlpatterns = [
     path('',views.welcome),
-
+    path('admin_login/', views.admin_login, name='admin_login'),  # Add this line
+    path('admin_panel/', views.admin_panel, name='admin_panel'),
     path('admin/', admin.site.urls),
-    path('register/',views.register_face),
+    path('admin_panel/register/',views.register_face),
     path('start/',views.start_face_recognition),
-        path('attendance/', views.display_attendance, name='display_attendance'),
+
+    path('admin_login/start/',views.start_face_recognition),
+    path('admin_panel/attendance/', views.display_attendance, name='display_attendance'),
 
 ]
